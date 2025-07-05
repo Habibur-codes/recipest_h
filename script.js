@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleBengali = document.getElementById('toggle-bengali');
 
     // API Keys
-    const SPOONACULAR_API_KEY = 'c0bb037e6bdf477588f365550b26586b';
-    const OPENAI_API_KEY = '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';
+    const SPOONACULAR_API_KEY = 'your_api_key';
+    const OPENAI_API_KEY = 'Your_api-key';
 
     // State
     let selectedIngredients = [];
