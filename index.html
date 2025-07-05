@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recipe Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Recipe Generator</h1>
+            <p>Discover delicious recipes based on what you have or what you crave</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-tabs">
+                <button class="tab-btn active" id="ingredient-tab">By Ingredients</button>
+                <button class="tab-btn" id="name-tab">By Recipe Name</button>
+            </div>
+            <!-- <div class="language-toggle">
+                <button id="toggle-language" class="lang-btn active" data-lang="en">English</button>
+                <button id="toggle-bengali" class="lang-btn" data-lang="bn">বাংলা</button>
+            </div> -->
+
+            <div class="search-content">
+                <!-- Ingredients Search -->
+                <div class="search-panel active" id="ingredient-panel">
+                    <div class="ingredient-input">
+                        <input type="text" id="ingredient-input" placeholder="Add ingredients (e.g., chicken, potatoes)">
+                        <button id="add-ingredient"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                    <div class="ingredient-tags" id="ingredient-tags"></div>
+                    <div class="filters">
+                        <select id="diet-filter">
+                            <option value="">Any Diet</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="gluten-free">Gluten-Free</option>
+                            <option value="keto">Keto</option>
+                            <option value="low-carb">Low-Carb</option>
+                        </select>
+                        <select id="cuisine-filter">
+                            <option value="">Any Cuisine</option>
+                            <option value="italian">Italian</option>
+                            <option value="mexican">Mexican</option>
+                            <option value="asian">Asian</option>
+                            <option value="indian">Indian</option>
+                            <option value="american">American</option>
+                            <option value="mediterranean">Mediterranean</option>
+                        </select>
+                        <select id="time-filter">
+                            <option value="">Any Time</option>
+                            <option value="15">Under 15 min</option>
+                            <option value="30">Under 30 min</option>
+                            <option value="60">Under 1 hour</option>
+                            <option value="120">Under 2 hours</option>
+                        </select>
+                    </div>
+                    <button id="generate-recipe" class="search-btn">Generate Recipes</button>
+                </div>
+
+                <!-- Name Search -->
+                <div class="search-panel" id="name-panel">
+                    <div class="name-input">
+                        <input type="text" id="recipe-name-input" placeholder="Search for recipes (e.g., chicken curry)">
+                        <button id="search-recipe" class="search-btn"><i class="fas fa-search"></i> Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section" id="results-section">
+            <h2>Suggested Recipes</h2>
+            <div class="recipe-grid" id="recipe-grid"></div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Generating delicious recipes...</p>
+        </div>
+    </div>
+
+    <div class="recipe-modal" id="recipe-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <h2 id="modal-recipe-title"></h2>
+            <div class="modal-recipe-meta">
+                <span id="modal-recipe-time"></span>
+                <span id="modal-recipe-diet"></span>
+                <span id="modal-recipe-cuisine"></span>
+            </div>
+            <div class="modal-recipe-content">
+                <div class="modal-ingredients">
+                    <h3>Ingredients</h3>
+                    <ul id="modal-ingredients-list"></ul>
+                </div>
+                <div class="modal-instructions">
+                    <h3>Instructions</h3>
+                    <ol id="modal-instructions-list"></ol>
+                </div>
+            </div>
+            <div class="language-toggle">
+                <button id="toggle-language" class="lang-btn active" data-lang="en">English</button>
+                <button id="toggle-bengali" class="lang-btn" data-lang="bn">বাংলা</button>
+            </div>
+            <button class="save-recipe" id="save-recipe"><i class="far fa-bookmark"></i> Save Recipe</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
